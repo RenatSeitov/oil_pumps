@@ -14,7 +14,7 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/token/create")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 # Настройка JWT
 SECRET_KEY = "mysecretkey"
 ALGORITHM = "HS256"
