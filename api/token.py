@@ -14,7 +14,7 @@ router = APIRouter(
 db = SessionLocal()
 
 
-@router.post("/token")
+@router.post("/create")
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
     user = TokenDAL(db).auth(form_data.username, form_data.password)
     if not user:

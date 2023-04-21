@@ -9,6 +9,9 @@ class PumpsDAL:
     def get_data(self, idx: int):
         return self.db_session.query(Pumps).filter(Pumps.id == idx).first()
 
+    def get_all(self):
+        return self.db_session.query(Pumps).all()
+
     def insert_data(self, data: Pumps):
         self.db_pump = Pumps(id=data.id, pressure=data.pressure,
                              temperature=data.temperature, speed=data.temperature)
